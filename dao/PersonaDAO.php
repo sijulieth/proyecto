@@ -1,7 +1,7 @@
 <?php
 
-include_once  dirname(__FILE__).'\..\configuracion\Configuracion.php';
-include_once dirname(__FILE__).'\..\modelo\Persona.php';
+include  dirname(__FILE__).'\..\configuracion\Configuracion.php';
+include  dirname(__FILE__).'\..\modelo\Persona.php';
 
 class PersonaDAO {
 
@@ -77,7 +77,7 @@ class PersonaDAO {
         }
 
     public function actualizarPersona(Persona $persona) {
-        $sql = "UPDATE `id_pers`=:id_pers, `nombre`=:nombre, `apellido`=:apellido, `telefono`=:telefono, `direccion`=:direccion, `email`=:email, `fecha`=:fecha, `persona`=:persona, `usuario`=:usuario, `contrasena`=:contrasena";
+        $sql = "UPDATE Persona SET `id_pers`=:id_pers, `nombre`=:nombre, `apellido`=:apellido, `telefono`=:telefono, `direccion`=:direccion, `email`=:email, `fecha`=:fecha, `persona`=:persona, `usuario`=:usuario, `contrasena`=:contrasena";
         $sql.=" WHERE id_pers = :id_pers ";
         return $this->ejecutarInserUpdate($sql, $persona);
     }

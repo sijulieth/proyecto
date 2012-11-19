@@ -1,5 +1,5 @@
 <?php
-require_once 'dao/PersonaDAO.php';
+include "dao/PersonaDAO.php";
 ?>
 <!DOCTYPE html>
 <html>
