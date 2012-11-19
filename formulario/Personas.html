@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nueva Persona</title>
+<style type="text/css">
+#form1 table {
+	font-weight: bold;
+	font-style: italic;
+}
+#form1 p {
+	font-weight: bold;
+	font-size: 24px;
+	font-style: italic;
+}
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="ctlPersona.php">
+        <input name="agregar" type="hidden" value="1"/>
+    
+ <p>NUEVA PERSONA</p>
+ <table width="417" border="0">
+    <tr>
+      <td width="80"><label>Cedula</label></td>
+      <td width="327"><input name="persona[id_pers]" type="text" id="idPersona" size="25" maxlength="20" /></td>
+    </tr>
+    <tr>
+      <td><label>Nombre</label></td>
+      <td><input name="persona[nombre]" type="text" id="nombre" size="25" maxlength="25" /></td>
+    </tr>
+    <tr>
+      <td><label>Apellido</label></td>
+      <td><input name="persona[apellido]" type="text" id="apellido" size="25" maxlength="25" /></td>
+    </tr>
+    <tr>
+      <td><label>Telefono</label></td>
+      <td><input name="persona[telefono]" type="text" id="telefono" size="25" maxlength="25" /></td>
+    </tr>
+    <tr>
+      <td><label>Direccion</label></td>
+      <td><input name="persona[direccion]" type="text" id="direccion" size="40" maxlength="40" /></td>
+    </tr>
+    <tr>
+      <td><label></label>
+        <label for="email">E-mail</label></td>
+      <td><input name="persona[email]" type="text" id="email" size="40" maxlength="40" /></td>
+    </tr>
+    <tr>
+      <td><label>Fecha</label></td>
+      <td><input type="text" name="persona[fecha]" id="fecha" /></td>
+    </tr>
+    <tr>
+      <td><label>Persona</label></td>
+      <td><input type="text" name="persona[persona]" id="persona" /></td>
+    </tr>
+    <tr>
+      <td>Usuario</td>
+      <td><input type="text" name="persona[usuario]" id="usuario" /></td>
+    </tr>
+    <tr>
+      <td><label for="contraseña">Contraseña</label></td>
+      <td><input type="text" name="persona[contrasena]" id="contraseña" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31">&nbsp;</td>
+      <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
+        <input type="submit" name="editar" id="editar" value="Editar" />
+        <input type="submit" name="buscar" id="buscar" value="Buscar" />
+<input type="submit" name="eliminar" id="eliminar" value="Eliminar" /></td>
+    </tr>
+    <tr>
+      <td height="31">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+</form>
+
+</body>
+</html>
