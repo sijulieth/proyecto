@@ -1,7 +1,7 @@
 <?php
 
-require_once  dirname(__FILE__).'\..\configuracion\Configuracion.php';
-require_once  dirname(__FILE__).'\..\modelo\Persona.php';
+include_once  dirname(__FILE__).'\..\configuracion\Configuracion.php';
+include_once  dirname(__FILE__).'\..\modelo\Persona.php';
 
 class PersonaDAO {
 

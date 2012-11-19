@@ -7,11 +7,13 @@ require_once 'dao/PersonaDAO.php';
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>PERSONAS</title>
         <script type="text/javascript">
+            
             function agregar(obj){
                 var frm = obj.form;
                 frm.action = 'formulario/Personas.html';
                 frm.submit();
             }
+            
             function modificar(obj) {
                 var frm = obj.form;
                 if (!hayOpcionChequeada(frm)) {
@@ -70,7 +72,7 @@ $personas = $pdao->leerTodos();
 <?php
 if (!empty($personas)) {
     foreach ($personas as $persona) {
-        ?>
+?>
                         <tr>
                             
                             <td width="34" align="center"><input type="radio" name="id_pers" id="radio" value="<?php echo $persona['id_pers']; ?>"></td>
