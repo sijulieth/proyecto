@@ -1,8 +1,8 @@
 <?php
 
-include dirname(__FILE__). '\..\modelo\Persona.php';
-include dirname(__FILE__). '\..\modelo\Mapeador.php';
-include dirname(__FILE__). '\..\dao\PersonaDAO.php';
+require_once  dirname(__FILE__). '\..\modelo\Persona.php';
+require_once dirname(__FILE__). '\..\modelo\Mapeador.php';
+require_once dirname(__FILE__). '\..\dao\PersonaDAO.php';
 
 $persona = new Persona();
 
