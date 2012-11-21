@@ -1,8 +1,8 @@
     <?php
 
-include dirname(__FILE__). '\..\modelo\Director.php';
-include dirname(__FILE__). '\..\modelo\Mapeador.php';
-include dirname(__FILE__). '\..\dao\DirectorDAO.php';
+include_once dirname(__FILE__). '\..\modelo\Director.php';
+include_once dirname(__FILE__). '\..\modelo\Mapeador.php';
+include_once dirname(__FILE__). '\..\dao\DirectorDAO.php';
 
 $director = new Director();
 

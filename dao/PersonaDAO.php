@@ -42,8 +42,7 @@ class PersonaDAO {
         $sentencia = $this->getDb()->prepare($sql);
         $sentencia->execute();
         $filas = $sentencia->fetch();
-        $persona = new Persona();
-        
+        $persona = new Persona();        
         Mapeador::mapearPersona($persona, $filas);
         return $persona;
     }
@@ -77,7 +76,7 @@ class PersonaDAO {
         }
 
     public function actualizarPersona(Persona $persona) {
-        $sql = "UPDATE Persona SET `id_pers`=:id_pers, `nombre`=:nombre, `apellido`=:apellido, `telefono`=:telefono, `direccion`=:direccion, `email`=:email, `fecha`=:fecha, `persona`=:persona, `usuario`=:usuario, `contrasena`=:contrasena";
+        $sql = "UPDATE persona SET `id_pers`=:id_pers, `nombre`=:nombre, `apellido`=:apellido, `telefono`=:telefono, `direccion`=:direccion, `email`=:email, `fecha`=:fecha, `persona`=:persona, `usuario`=:usuario, `contrasena`=:contrasena";
         $sql.=" WHERE id_pers = :id_pers ";
         return $this->ejecutarInserUpdate($sql, $persona);
     }

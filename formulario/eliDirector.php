@@ -39,17 +39,16 @@
  <table width="417" border="0">
     <tr>
       <td><label>Codigo Director</label></td>
-      <td><input type="text" name="director[cod_dir]" id="cod Director" readonly="yes" value="<?php echo $director->getCodDir();?>" /></td>
+      <td><input  name="director[cod_dir]" type="text" id="codDirector" size="25" maxlength="25" readonly="yes" value="<?php echo $director->getCodDir();?>" /></td>
     </tr>
     <tr>
       <td><label>Identificacion</label></td>
-      <td><input type="text" name="director[id_dir]" id="idDirector"  value="<?php echo $director->getPersonaIdPers();?>"  /></td>
+      <td><input  name="director[id_dir]" type="text" id="idDirector" size="25" maxlength="25" readonly="yes" value="<?php echo $director->getPersonaIdPers();?>"  /></td>
     </tr>
     <tr>
       <td><label>Codigo de Proyecto</label></td>
-      <td><input type="text" name="director[cod_proy]" id="codProyecto"  value="<?php echo $director->getCodProy();?>"  /></td>
-    </tr>
-    
+      <td><input  name="director[cod_proy]" type="text" id="codProyecto" size="25" maxlength="25" readonly="yes" value="<?php echo $director->getCodProy();?>"  /></td>
+    </tr>    
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>

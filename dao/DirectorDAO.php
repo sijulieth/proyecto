@@ -1,6 +1,5 @@
 <?php
 
-//require_once "../configuracion/Configuracion.php";
 
 include_once  dirname(__FILE__).'\..\configuracion\Configuracion.php';
 include_once dirname(__FILE__).'\..\modelo\Director.php';
@@ -63,7 +62,7 @@ class DirectorDAO {
         }
 
     public function actualizarDirector(Director $director) {
-        $sql = "UPDATE `cod_dir`=:cod_dir, `persona_id_pers`=:persona_id_pers, `cod_proy`=:cod_proy";
+        $sql = "UPDATE director SET `cod_dir`=:cod_dir, `persona_id_pers`=:persona_id_pers, `cod_proy`=:cod_proy";
         $sql.=" WHERE cod_dir = :cod_dir ";
         return $this->ejecutarInserUpdate($sql, $director);
     }

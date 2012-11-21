@@ -19,20 +19,22 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="">
-  <p>Estudiante</p>
-  <table width="381" border="0">
+<form id="form1" name="form1" method="post" action="ctlEstudiante.php">
+            <input name="agregar" type="hidden" value="1"/>
+
+  <p>NUEVO ESTUDIANTE</p>
+  <table width="438" border="0">
     <tr>
-      <td width="127"><label for="codEstudiante">Codigo Estudiante</label></td>
-      <td width="244"><input type="text" name="codEstudiante" id="codEstudiante" /></td>
+      <td width="127"><label for="codEstudiante">Codigo</label></td>
+      <td width="276"><input type="text" name="estudiante[cod_est]" id="codEstudiante" /></td>
     </tr>
     <tr>
       <td><label for="idEstudiante">Identificacion</label></td>
-      <td><input type="text" name="idEstudiante" id="idEstudiante" /></td>
+      <td><input type="text" name="estudiante[persona_id_pers]" id="idEstudiante" /></td>
     </tr>
     <tr>
       <td><label for="codProyecto">Codigo Proyecto</label></td>
-      <td><input type="text" name="codProyecto" id="codProyecto" /></td>
+      <td><input type="text" name="estudiante[proyecto_cod_proy]" id="codProyecto" /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -41,10 +43,7 @@
     <tr>
       <td>&nbsp;</td>
       <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
-        <input type="submit" name="editar" id="editar" value="Editar" />
-        <input type="submit" name="buscar" id="buscar" value="Buscar" />
-        <input type="submit" name="eliminar" id="eliminar" value="Eliminar" /></td>
-    </tr>
+      </td></tr>
   </table>
 </form>
 </body>

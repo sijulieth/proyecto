@@ -9,9 +9,40 @@ require_once 'dao/EstudianteDAO.php';
         <script type="text/javascript">
             function agregar(obj){
                 var frm = obj.form;
-                frm.action = 'paginas/addEstudiante.html';
+                frm.action = 'formulario/Estudiante.html';
                 frm.submit();
             }
+            
+            function modificar(obj) {
+                var frm = obj.form;
+                if (!hayOpcionChequeada(frm)) {
+                    alert('Debe seleccionar una opcion');
+                }else{
+                    frm.action = 'formulario/modEstudiante.php';
+                    frm.submit();
+                }
+            }
+            
+            function eliminar(obj) {
+                var frm = obj.form;
+                if (!hayOpcionChequeada(frm)) {
+                    alert('Debe seleccionar una opcion');
+                }else{
+                    frm.action = 'formulario/eliEstudiante.php';
+                    frm.submit();
+                }
+            }
+            
+            function hayOpcionChequeada(frm) {
+                arrObjs = frm.elements;
+                for(i=0; i < arrObjs.length; i++){
+                    if(arrObjs[i].type === 'radio' && arrObjs[i].checked === true){
+                        return true;
+                    }
+                }
+                return false;
+            }
+    
         </script>
     </head>
     <body>
@@ -38,7 +69,7 @@ if (!empty($estudiantes)) {
         ?>
                         <tr>
                             
-                            <td width="34" align="center"><input type="radio" name="radio" id="radio" value="<?php echo $estudiante['cod_est']; ?>"></td>
+                            <td width="34" align="center"><input type="radio" name="cod_est" id="radio" value="<?php echo $estudiante['cod_est']; ?>"></td>
                             <td width="40" scope="col"><?php echo $estudiante['cod_est']; ?></td>
                             <td width="40" scope="col"><?php echo $estudiante['persona_id_pers']; ?></td>
                             <td width="40" scope="col"><?php echo $estudiante['proyecto_cod_proy']; ?></td>
@@ -52,8 +83,8 @@ if (!empty($estudiantes)) {
             </table>
             <p>
                 <input type="button" name="button" id="button" value="Agregar" onclick="agregar(this)">
-                <input type="button" name="button2" id="button2" value="Modificar">
-                <input type="button" name="button3" id="button3" value="Eliminar">
+                <input type="button" name="button2" id="button2" value="Modificar" onclick="modificar(this)">
+                <input type="button" name="button3" id="button3" value="Eliminar" onclick="eliminar(this)">
             </p>
         </form>
     </body>

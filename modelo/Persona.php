@@ -235,8 +235,8 @@ class Persona {
      *toma el parametro contraseña y se lo asigna a la clase Personas
      * @param String $contraseña 
      */
-    public function setContrasena($contraseña) {
-        $this->contraseña = $contraseña;
+    public function setContrasena($contrasena) {
+        $this->contrasena = $contrasena;
     }
 
 

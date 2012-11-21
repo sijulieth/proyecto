@@ -36,6 +36,20 @@ final class Mapeador {
         
     }
     
+    public static function mapearEstudiante(Estudiante $estudiante, array $dato){
+        
+        if(array_key_exists('codEst', $dato)){
+            $estudiante->setCodEst($dato['codEst']);
+        }
+        if(array_key_exists('personaIdPers', $dato)){
+            $estudiante->setPersonaIdPers($dato['personaIdPers']);
+        }
+        if(array_key_exists('proyectoCodProy', $dato)){
+            $estudiante->setProyectoCodProy($dato['proyectoCodProy']);
+        }
+               
+    }
+    
     public static function mapearProyecto(Proyecto $proyecto, array $datos){
         
         if(array_key_exists('codProy', $datos)){
