@@ -2,7 +2,7 @@
 
 
 include_once  dirname(__FILE__).'\..\configuracion\Configuracion.php';
-include_once dirname(__FILE__).'\..\modelo\Estudiante.php';
+include_once  dirname(__FILE__).'\..\modelo\Estudiante.php';
 
 class EstudianteDAO {
 
