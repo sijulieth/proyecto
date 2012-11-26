@@ -1,16 +1,16 @@
 <?php
-    include dirname(__FILE__). '\..\modelo\Estudiante.php';
+    include dirname(__FILE__). '\..\modelo\Jurado.php';
     include dirname(__FILE__). '\..\modelo\Mapeador.php';
-    include dirname(__FILE__). '\..\dao\EstudianteDAO.php';
+    include dirname(__FILE__). '\..\dao\JuradoDAO.php';
     
-    $documento = "";
-    if(array_key_exists('cod_est', $_POST)){
-        $documento = $_POST['cod_est'];
+    $id_pers = "";
+    if(array_key_exists('cod_jura', $_POST)){
+        $id_pers = $_POST['cod_jura'];
     }
     
-    $personaDAO = new EstudianteDAO();
-    $persona = new Estudiante();
-    $persona = $personaDAO->leerPorDocumento($documento);
+    $personaDAO = new JuradoDAO();
+    $persona = new Jurado();
+    $persona = $personaDAO->leerPorDocumento($id_pers);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -32,12 +32,12 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="ctlEstudiante.php">
-        <input name="eliminar" type="hidden" value="eliminar"/>
+<form id="form3" name="form3" method="post" action="ctlJurado.php">
+        <input name="modificar" type="hidden" value="1"/>
     
- <p>ESTUDIANTE</p>
+ <p>MODIFICAR ESTUDIANTE</p>
  <table width="417" border="0">
-    <tr>
+     <tr>
       <td width="127"><label for="codEstudiante">Codigo</label></td>
       <td width="276"><input type="text" name="estudiante[cod_est]" id="codEstudiante" readonly="yes" value="<?php echo $persona->getCodEst();?>"  /></td>
     </tr>
@@ -47,7 +47,7 @@
     </tr>
     <tr>
       <td><label for="codProyecto">Codigo Proyecto</label></td>
-      <td><input type="text" name="estudiante[proyecto_cod_proy]" id="codProyecto" readonly="yes" value="<?php echo $persona->getProyectoCodProy();?>"  /></td>
+      <td><input type="text" name="estudiante[proyecto_cod_proy]" id="codProyecto" value="<?php echo $persona->getProyectoCodProy();?>"  /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -55,12 +55,11 @@
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" name="guardar" id="eliminar" value="Eliminar" />
+      <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
       </td></tr>
   </table>
  <p>&nbsp;</p>
  <p>&nbsp;</p>
 </form>
-
 </body>
 </html>

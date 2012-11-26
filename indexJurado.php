@@ -9,8 +9,27 @@ require_once 'dao/JuradoDAO.php';
         <script type="text/javascript">
             function agregar(obj){
                 var frm = obj.form;
-                frm.action = 'paginas/addJurado.html';
+                frm.action = 'formulario/Jurado.html';
                 frm.submit();
+            }
+            
+            function modificar(obj) {
+                var frm = obj.form;
+                if (!hayOpcionChequeada(frm)) {
+                    alert('Debe seleccionar una opcion');
+                }else{
+                    frm.action = 'formulario/modJurado.php';
+                    frm.submit();
+                }
+            }
+             function eliminar(obj) {
+                var frm = obj.form;
+                if (!hayOpcionChequeada(frm)) {
+                    alert('Debe seleccionar una opcion');
+                }else{
+                    frm.action = 'formulario/eliJurado.php';
+                    frm.submit();
+                }
             }
         </script>
     </head>
@@ -38,7 +57,7 @@ if (!empty($jurados)) {
         ?>
                         <tr>
                             
-                            <td width="34" align="center"><input type="radio" name="radio" id="radio" value="<?php echo $jurado['cod_jura']; ?>"></td>
+                            <td width="34" align="center"><input type="radio" name="cod_jura" id="radio" value="<?php echo $jurado['cod_jura']; ?>"></td>
                             <td width="40" scope="col"><?php echo $jurado['cod_jura']; ?></td>
                             <td width="40" scope="col"><?php echo $jurado['persona_id_pers']; ?></td>
                             <td width="40" scope="col"><?php echo $jurado['cod_proy']; ?></td>
@@ -52,8 +71,8 @@ if (!empty($jurados)) {
             </table>
             <p>
                 <input type="button" name="button" id="button" value="Agregar" onclick="agregar(this)">
-                <input type="button" name="button2" id="button2" value="Modificar">
-                <input type="button" name="button3" id="button3" value="Eliminar">
+                <input type="button" name="button2" id="button2" value="Modificar" onclick="modificar(this)">
+                <input type="button" name="button3" id="button3" value="Eliminar" onclick="eliminar(this)">
             </p>
         </form>
     </body>

@@ -38,14 +38,14 @@ final class Mapeador {
     
     public static function mapearEstudiante(Estudiante $estudiante, array $datos){
         
-        if(array_key_exists('codEst', $datos)){
-            $estudiante->setCodEst($datos['codEst']);
+        if(array_key_exists('cod_est', $datos)){
+            $estudiante->setCodEst($datos['cod_est']);
         }
-        if(array_key_exists('personaIdPers', $datos)){
-            $estudiante->setPersonaIdPers($datos['personaIdPers']);
+        if(array_key_exists('persona_id_pers', $datos)){
+            $estudiante->setPersonaIdPers($datos['persona_id_pers']);
         }
-        if(array_key_exists('proyectoCodProy', $datos)){
-            $estudiante->setProyectoCodProy($datos['proyectoCodProy']);
+        if(array_key_exists('proyecto_cod_proy', $datos)){
+            $estudiante->setProyectoCodProy($datos['proyecto_cod_proy']);
         }
                
     }
@@ -77,19 +77,31 @@ final class Mapeador {
     
     public static function mapearDirector(Director $director, array $datos){
         
-        if(array_key_exists('codDir', $datos)){
-            $director->setCodDir($datos['codDir']);
+        if(array_key_exists('cod_dir', $datos)){
+            $director->setCodDir($datos['cod_dir']);
         }
-        if(array_key_exists('personaIdPers', $datos)){
-            $director->setPersonaIdPers($datos['personaIdPers']);
+        if(array_key_exists('persona_id_pers', $datos)){
+            $director->setPersonaIdPers($datos['persona_id_pers']);
         }
-        if(array_key_exists('codProy', $datos)){
-            $director->setCodProy($datos['codProy']);
+        if(array_key_exists('cod_proy', $datos)){
+            $director->setCodProy($datos['cod_proy']);
         }
         
     }
 
-    
+public static function mapearJurado(Jurado $jurado, array $datos){
+        
+        if(array_key_exists('cod_jura', $datos)){
+            $jurado->setCodJura($datos['cod_jura']);
+        }
+        if(array_key_exists('persona_id_pers', $datos)){
+            $jurado->setIdPers($datos['persona_id_pers']);
+        }
+        if(array_key_exists('cod_proy', $datos)){
+            $jurado->setCodProy($datos['cod_proy']);
+        }
+        
+    }    
     
 }
 ?>

@@ -17,20 +17,22 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="">
-  <p>Jurado</p>
+<form id="form1" name="form1" method="post" action="ctlJurado.php">
+            <input name="agregar" type="hidden" value="1"/>
+
+  <p>NUEVO JURADO</p>
   <table width="454" border="0">
     <tr>
       <td width="121"><label for="codJurado">Codigo Jurado</label></td>
-      <td width="323"><input type="text" name="codJurado" id="codJurado" /></td>
+      <td width="323"><input type="text" name="jurado[cod_jura]" id="codJurado" /></td>
     </tr>
     <tr>
       <td><label for="idJurado">Identificacion</label></td>
-      <td><input type="text" name="idJurado" id="idJurado" /></td>
+      <td><input type="text" name="jurado[persona_id_pers]" id="idJurado" /></td>
     </tr>
     <tr>
       <td><label for="codProyecto">Codigo Proyecto</label></td>
-      <td><input type="text" name="codProyecto" id="codProyecto" /></td>
+      <td><input type="text" name="jurado[cod_proy]" id="codProyecto" /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -39,9 +41,7 @@
     <tr>
       <td>&nbsp;</td>
       <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
-        <input type="submit" name="editar" id="editar" value="Editar" />
-        <input type="submit" name="buscar" id="buscar" value="Buscar" />
-        <input type="submit" name="eliminar" id="eliminar" value="Eliminar" /></td>
+        </td>
     </tr>
   </table>
 </form>

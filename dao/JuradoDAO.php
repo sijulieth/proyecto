@@ -1,7 +1,5 @@
 <?php
 
-//require_once "../configuracion/Configuracion.php";
-
 include_once  dirname(__FILE__).'\..\configuracion\Configuracion.php';
 include_once dirname(__FILE__).'\..\modelo\Jurado.php';
 class JuradoDAO {
@@ -10,66 +8,100 @@ class JuradoDAO {
 
     const SQL_INSERTAR = 1;
 
-    private function getDb() {
+       private function getDb() {
         if ($this->db !== null) {
             return $this->db;
         }
         try {
             $cfg = Configuracion::obtConfig("basedatos");
             $this->db = new PDO($cfg['dsn'], $cfg['user'], $cfg['password']);
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            throw new Exception("La base de datos no pudo ser creada.".$exc->getMessage());
         }
         return $this->db;
     }
 
     public function leerTodos() {
         $sql = "SELECT * FROM jurado";
-        $sentencia = $this->getDb()->prepare($sql);
+         $sentencia = $this->getDb()->prepare($sql);
         $cursor = $sentencia->execute();
+        if(!$cursor){
+            self::lanzarErrorBD($this->getDb()->errorInfo());
+        }
         $filas = $sentencia->fetchAll();
+        if(!$filas){
+            self::lanzarErrorBD($this->getDb()->errorInfo());
+        }
         return $filas;
     
-    }/*
+    }
     public function leerPorDocumento($documento = '') {
-        $sql = "SELECT * FROM persona WHERE identificacion = $documento";
+        $sql = "SELECT * FROM jurado WHERE cod_jura = $documento";
         $sentencia = $this->getDb()->prepare($sql);
-        $cursor = $sentencia->execute();
+        $sentencia->execute();
         $filas = $sentencia->fetch();
-        return $filas;
+        $persona = new Jurado();        
+        Mapeador::mapearJurado($persona, $filas);
+        return $persona;
     }
 
-    public function insertarPersona(Persona $persona) {
-        $sql = "INSERT INTO `personas` (`documento`, `nombres`, `apellidos`, `telefono1`, `telefono2`, `email`, `direccion`) VALUES ";
-        $sql.=" (:documento, :nombres, :apellidos, :telefono1, :telefono2, :email, :direccion) ";
+    public function insertarJurado(Jurado $persona) {
+        $sql = "INSERT INTO `jurado` (`cod_jura`, `persona_id_pers`, `cod_proy`) VALUES ";
+        $sql.=" (:cod_jura, :persona_id_pers, :cod_proy) ";
+         $resul = false;
+        try {
+            $resul = $this->ejecutarInserUpdate($sql, $persona);
+        }catch(Exception $ex){
+            echo $ex->getMessage();
+        }
+        return $resul;
+        
+        }
+
+    public function actualizarJurado(Jurado $persona) {
+        $sql = "UPDATE `jurado` SET `cod_jura`=:cod_jura,`persona_id_pers`=:persona_id_pers,`cod_proy`=:cod_proy";
+        $sql.=" WHERE cod_jura = :cod_jura ";
         return $this->ejecutarInserUpdate($sql, $persona);
     }
 
-    public function actualizarPersona(Persona $persona) {
-        $sql = "UPDATE `personas` SET `nombres`=:nombres,`apellidos`=:apellidos,`telefono1`=:telefono1, ";
-        $sql.=" `telefono2`=:telefono2,`email`=:email,`direccion`=:direccion,`fechaRegistro`=:fechaRegistro ";
-        $sql.=" WHERE documento = :documento ";
-        return $this->ejecutarInserUpdate($sql, $persona);
-    }
-
-    private function ejecutarInserUpdate($sql, Persona $persona) {
+    private function ejecutarInserUpdate($sql, Jurado $persona) {
         $sentencia = $this->getDb()->prepare($sql);
         $parametros = $this->getParametros($persona);
-        return $sentencia->execute($parametros);
+        $retorno = $sentencia->execute($parametros);
+        if ($retorno == false) {
+            self::lanzarErrorBD($this->getDb()->errorInfo());
+        }
+        return $retorno;
+    }
+    
+     public function eliminarJurado(Jurado $persona) {
+        $sql = "DELETE FROM jurado WHERE cod_jura = :cod_jura";
+        return $this->ejecutarDelete($sql, $persona);
+    }
+    
+    private function ejecutarDelete($sql, Jurado $persona){
+        $sentencia = $this->getDb()->prepare($sql);
+        $parametros = array(':cod_jura' => $persona->getCodJura());
+        $retorno = $sentencia->execute($parametros);
+        if ($retorno == false) {
+            self::lanzarErrorBD($this->getDb()->errorInfo());
+        }
+        return $retorno;
+        
     }
 
-    private function getParametros(Persona $persona) {
+    private function getParametros(Jurado $persona) {
         $parametros = array(
-            ':documento' => $persona->getDocumento(),
-            ':nombres' => $persona->getNombre(),
-            ':apellidos' => $persona->getApellidos(),
-            ':telefono1' => $persona->getTelefono1(),
-            ':telefono2' => $persona->getTelefono2(),
-            ':email' => $persona->getEmail(),
-            ':direccion' => $persona->getDireccion()
+            ':cod_jura' => $persona->getCodJura(),
+            ':persona_id_pers' => $persona->getIdPers(),
+            ':cod_proy' => $persona->getCodProy()
         );
         return $parametros;
-    }*/
+    }
+    public static function lanzarErrorBD($arrayError){
+        throw new Exception("Error de operacion en BD: ".$arrayError[1]);
+       }
 }
 
 ?>

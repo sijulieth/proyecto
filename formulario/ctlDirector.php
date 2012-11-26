@@ -9,9 +9,9 @@ $director = new Director();
 $mensaje = "";
 
 $datos = array(
-    'codDir' => $_POST['director']['cod_dir'], 
-    'personaIdPers' => $_POST['director']['id_dir'],
-    'codProy' => $_POST['director']['cod_proy']
+    'cod_dir' => $_POST['director']['cod_dir'], 
+    'persona_id_pers' => $_POST['director']['id_dir'],
+    'cod_proy' => $_POST['director']['cod_proy']
  );
 
 Mapeador::mapearDirector($director, $datos);

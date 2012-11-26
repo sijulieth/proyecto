@@ -35,7 +35,7 @@
 <form id="form2" name="form1" method="post" action="ctlDirector.php">
         <input name="eliminar" type="hidden" value="1"/>
     
- <p>DIRECTOR</p>
+ <p>ELIMINAR DIRECTOR</p>
  <table width="417" border="0">
     <tr>
       <td><label>Codigo Director</label></td>
@@ -47,7 +47,7 @@
     </tr>
     <tr>
       <td><label>Codigo de Proyecto</label></td>
-      <td><input  name="director[cod_proy]" type="text" id="codProyecto" size="25" maxlength="25" readonly="yes" value="<?php echo $director->getCodProy();?>"  /></td>
+      <td><input  name="director[cod_proy]" type="text" id="codProyecto" size="25" maxlength="25"  value="<?php echo $director->getCodProy();?>"  /></td>
     </tr>    
     <tr>
       <td>&nbsp;</td>

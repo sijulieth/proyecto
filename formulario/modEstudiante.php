@@ -39,11 +39,11 @@
  <table width="417" border="0">
      <tr>
       <td width="127"><label for="codEstudiante">Codigo</label></td>
-      <td width="276"><input type="text" name="estudiante[cod_est]" id="codEstudiante" value="<?php echo $persona->getCodEst();?>"  /></td>
+      <td width="276"><input type="text" name="estudiante[cod_est]" id="codEstudiante" readonly="yes" value="<?php echo $persona->getCodEst();?>"  /></td>
     </tr>
     <tr>
       <td><label for="idEstudiante">Identificacion</label></td>
-      <td><input type="text" name="estudiante[persona_id_pers]" id="idEstudiante" value="<?php echo $persona->getPersonaIdPers();?>"  /></td>
+      <td><input type="text" name="estudiante[persona_id_pers]" id="idEstudiante" readonly="yes" value="<?php echo $persona->getPersonaIdPers();?>"  /></td>
     </tr>
     <tr>
       <td><label for="codProyecto">Codigo Proyecto</label></td>

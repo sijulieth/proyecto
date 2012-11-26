@@ -9,9 +9,9 @@ $estudiante = new Estudiante();
 $mensaje = "";
 
 $datos = array(
-    'codEst' => $_POST['estudiante']['cod_est'], 
-    'personaIdPers' => $_POST['estudiante']['persona_id_pers'],
-    'proyectoCodProy' => $_POST['estudiante']['proyecto_cod_proy']
+    'cod_est' => $_POST['estudiante']['cod_est'], 
+    'persona_id_pers' => $_POST['estudiante']['persona_id_pers'],
+    'proyecto_cod_proy' => $_POST['estudiante']['proyecto_cod_proy']
     
 );
 

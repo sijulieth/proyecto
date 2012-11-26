@@ -19,7 +19,7 @@ require_once 'dao/DirectorDAO.php';
                 if (!hayOpcionChequeada(frm)) {
                     alert('Debe seleccionar una opcion');
                 }else{
-                    frm.action = 'paginas/modPersonas.php';
+                    frm.action = 'formulario/modDirector.php';
                     frm.submit();
                 }
             }
@@ -84,7 +84,7 @@ if (!empty($directores)) {
             </table>
             <p>
                 <input type="button" name="button" id="button" value="Agregar" onclick="agregar(this)">
-                <input type="button" name="button2" id="button2" value="Modificar" >
+                <input type="button" name="button2" id="button2" value="Modificar" onclick="modificar (this)">
                 <input type="button" name="button3" id="button3" value="Eliminar" onclick="eliminar(this)">
             </p>
         </form>
