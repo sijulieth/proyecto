@@ -20,6 +20,6 @@ if(isset($_SESSION['usuario'])){
 <p>Bienvenido <?php echo $uNombre; ?></p>
 <p>&nbsp;</p>
 <h2>MENU</h2>
-<p><a href="indexJurado.php">JURADO</a></p>
+<p><a href="indexPersona.php">PERSONAS</a></p>
 </body>
 </html>
