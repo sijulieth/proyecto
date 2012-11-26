@@ -31,6 +31,16 @@ require_once 'dao/JuradoDAO.php';
                     frm.submit();
                 }
             }
+            
+            function hayOpcionChequeada(frm) {
+                arrObjs = frm.elements;
+                for(i=0; i < arrObjs.length; i++){
+                    if(arrObjs[i].type === 'radio' && arrObjs[i].checked === true){
+                        return true;
+                    }
+                }
+                return false;
+            }
         </script>
     </head>
     <body>

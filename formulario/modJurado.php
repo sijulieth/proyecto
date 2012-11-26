@@ -35,19 +35,19 @@
 <form id="form3" name="form3" method="post" action="ctlJurado.php">
         <input name="modificar" type="hidden" value="1"/>
     
- <p>MODIFICAR ESTUDIANTE</p>
- <table width="417" border="0">
-     <tr>
-      <td width="127"><label for="codEstudiante">Codigo</label></td>
-      <td width="276"><input type="text" name="estudiante[cod_est]" id="codEstudiante" readonly="yes" value="<?php echo $persona->getCodEst();?>"  /></td>
+ <p>MODIFICAR JURADO</p>
+  <table width="454" border="0">
+    <tr>
+      <td width="121"><label for="codJurado">Codigo Jurado</label></td>
+      <td width="323"><input type="text" name="jurado[cod_jura]" id="codJurado" size="25" maxlength="25" readonly="yes" value="<?php echo $persona->getCodJura();?>" /></td>
     </tr>
     <tr>
-      <td><label for="idEstudiante">Identificacion</label></td>
-      <td><input type="text" name="estudiante[persona_id_pers]" id="idEstudiante" readonly="yes" value="<?php echo $persona->getPersonaIdPers();?>"  /></td>
+      <td><label for="idJurado">Identificacion</label></td>
+      <td><input type="text" name="jurado[persona_id_pers]" id="idJurado" size="25" maxlength="25" readonly="yes" value="<?php echo $persona->getIdPers();?>"  /></td>
     </tr>
     <tr>
       <td><label for="codProyecto">Codigo Proyecto</label></td>
-      <td><input type="text" name="estudiante[proyecto_cod_proy]" id="codProyecto" value="<?php echo $persona->getProyectoCodProy();?>"  /></td>
+      <td><input type="text" name="jurado[cod_proy]" id="codProyecto" size="25" maxlength="25"  value="<?php echo $persona->getCodProy();?>"  /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -56,7 +56,8 @@
     <tr>
       <td>&nbsp;</td>
       <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
-      </td></tr>
+        </td>
+    </tr>
   </table>
  <p>&nbsp;</p>
  <p>&nbsp;</p>

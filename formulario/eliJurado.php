@@ -55,7 +55,7 @@
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
+      <td><input type="submit" name="eliminar" id="eliminar" value="Eliminar" />
         </td>
     </tr>
   </table>

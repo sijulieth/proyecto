@@ -18,22 +18,24 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="">
-  <p>Proyecto</p>
+<form id="form1" name="form1" method="post" action="ctlProyecto.php">
+        <input name="agregar" type="hidden" value="1"/>
+    
+  <p>NUEVO PROYECTO</p>
   <table width="471" border="0">
     <tr>
       <td width="167" height="39"><label for="codProyecto">Codigo Proyecto</label></td>
-      <td width="294"><input type="text" name="codProyecto" id="codProyecto" /></td>
+      <td width="294"><input type="text" name="proyecto[cod_proy]" id="codProyecto" /></td>
     </tr>
     <tr>
       <td><label for="tema">Tema</label></td>
-      <td><textarea name="tema" id="tema" cols="45" rows="4"></textarea></td>
+      <td><textarea name="proyecto[tema]" id="tema" cols="45" rows="4"></textarea></td>
     </tr>
     <tr>
       <td height="61"><label for="linInvestigacion">Linea de Investigacion</label></td>
       <td><p>
         <label for="linInvestigacion2"></label>
-        <select name="linInvestigacion" id="linInvestigacion2">
+        <select name="proyecto[lin_inves]" id="linInvestigacion2">
           <option>Ingenieria de software</option>
           <option>Informatica educativa</option>
           <option>Auditoria de sistemas y seguridad</option>
@@ -45,9 +47,7 @@
     <tr>
       <td height="51">&nbsp;</td>
       <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
-        <input type="submit" name="editar" id="editar" value="Editar" />
-        <input type="submit" name="eliminar" id="eliminar" value="Eliminar" />
-        <input type="submit" name="buscar" id="buscar" value="Buscar" /></td>
+        </td>
     </tr>
   </table>
 </form>

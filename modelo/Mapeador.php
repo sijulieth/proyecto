@@ -36,6 +36,35 @@ final class Mapeador {
         
     }
     
+public static function mapearSeguimiento(Seguimiento $seguimiento, array $datos){
+        
+        if(array_key_exists('cod_seg', $datos)){
+            $seguimiento->setCodSeg($datos['cod_seg']);
+        }
+        if(array_key_exists('proyecto_cod_proy', $datos)){
+            $seguimiento->setProyectoCodProy($datos['proyecto_cod_proy']);
+        }
+        if(array_key_exists('fecha_inicial', $datos)){
+            $seguimiento->setFechaInicial($datos['fecha_inicial']);
+        }
+        if(array_key_exists('fecha_final', $datos)){
+            $seguimiento->setFechaFinal($datos['fecha_final']);
+        }
+        if(array_key_exists('fecha_limite', $datos)){
+            $seguimiento->setFechaLimite($datos['fecha_limite']);
+        }
+        if(array_key_exists('observaciones', $datos)){
+            $seguimiento->setObservaciones($datos['observaciones']);
+        }
+        if(array_key_exists('etapa', $datos)){
+            $seguimiento->setEtapa($datos['etapa']);
+        }
+        if(array_key_exists('estado', $datos)){
+            $seguimiento->setEstado($datos['estado']);
+        }
+               
+    }
+        
     public static function mapearEstudiante(Estudiante $estudiante, array $datos){
         
         if(array_key_exists('cod_est', $datos)){
@@ -52,14 +81,14 @@ final class Mapeador {
     
     public static function mapearProyecto(Proyecto $proyecto, array $datos){
         
-        if(array_key_exists('codProy', $datos)){
-            $proyecto->setDocumento($datos['documento']);
+        if(array_key_exists('cod_proy', $datos)){
+            $proyecto->setCodProy($datos['cod_proy']);
         }
         if(array_key_exists('tema', $datos)){
-            $proyecto->setNombre($datos['tema']);
+            $proyecto->setTema($datos['tema']);
         }
-        if(array_key_exists('linInves', $datos)){
-            $proyecto->setApellidos($datos['linInves']);
+        if(array_key_exists('lin_inves', $datos)){
+            $proyecto->setLinInves($datos['lin_inves']);
         }
         
     }

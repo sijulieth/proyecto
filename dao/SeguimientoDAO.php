@@ -17,59 +17,105 @@ class SeguimientoDAO {
         try {
             $cfg = Configuracion::obtConfig("basedatos");
             $this->db = new PDO($cfg['dsn'], $cfg['user'], $cfg['password']);
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }
         return $this->db;
     }
 
-    public function leerTodos() {
+     public function leerTodos() {
         $sql = "SELECT * FROM seguimiento";
         $sentencia = $this->getDb()->prepare($sql);
         $cursor = $sentencia->execute();
+        if(!$cursor){
+            self::lanzarErrorBD($this->getDb()->errorInfo());
+        }
         $filas = $sentencia->fetchAll();
+        if(!$filas){
+            self::lanzarErrorBD($this->getDb()->errorInfo());
+        }
         return $filas;
     
-    }/*
-    public function leerPorDocumento($documento = '') {
-        $sql = "SELECT * FROM persona WHERE identificacion = $documento";
+    }
+    public function leerPorDocumento($cod_seg = '') {
+        $sql = "SELECT * FROM seguimiento WHERE cod_seg =". $cod_seg;
         $sentencia = $this->getDb()->prepare($sql);
-        $cursor = $sentencia->execute();
+        $sentencia->execute();
         $filas = $sentencia->fetch();
-        return $filas;
+        $persona = new Seguimiento();        
+        Mapeador::mapearSeguimiento($persona, $filas);
+        return $persona;
     }
+    
+     
+    
+    public function insertarSeguimiento(Seguimiento $persona) {
+        $sql = "INSERT INTO `seguimiento` (`cod_seg`, `proyecto_cod_proy`, `fecha_inicial`, `fecha_final`, `fecha_limite`, `observaciones`, `etapa`, `estado`) VALUES ";
+        $sql.=" (:cod_seg, :proyecto_cod_proy, :fecha_inicial, :fecha_final, :fecha_limite, :observaciones, :etapa, :estado, :contrasena) ";
+        $resul = false;
+        try {
+            $resul = $this->ejecutarInserUpdate($sql, $persona);
+        }catch(Exception $ex){
+            echo $ex->getMessage();
+        }
+        return $resul;
+        
+        }
 
-    public function insertarPersona(Persona $persona) {
-        $sql = "INSERT INTO `personas` (`documento`, `nombres`, `apellidos`, `telefono1`, `telefono2`, `email`, `direccion`) VALUES ";
-        $sql.=" (:documento, :nombres, :apellidos, :telefono1, :telefono2, :email, :direccion) ";
+    public function actualizarSeguimiento(Seguimiento $persona) {
+        $sql = "UPDATE persona SET `cod_seg`=:cod_seg, `proyecto_cod_proy`=:proyecto_cod_proy, `fecha_inicial`=:fecha_inicial, `fecha_final`=:fecha_final, `fecha_limite`=:fecha_limite, `observaciones`=:observaciones, `etapa`=:etapa, `estado`=:estado";
+        $sql.=" WHERE cod_seg = :cod_seg ";
         return $this->ejecutarInserUpdate($sql, $persona);
     }
-
-    public function actualizarPersona(Persona $persona) {
-        $sql = "UPDATE `personas` SET `nombres`=:nombres,`apellidos`=:apellidos,`telefono1`=:telefono1, ";
-        $sql.=" `telefono2`=:telefono2,`email`=:email,`direccion`=:direccion,`fechaRegistro`=:fechaRegistro ";
-        $sql.=" WHERE documento = :documento ";
-        return $this->ejecutarInserUpdate($sql, $persona);
-    }
-
-    private function ejecutarInserUpdate($sql, Persona $persona) {
+    
+    private function ejecutarInserUpdate($sql, Seguimiento $persona) {
         $sentencia = $this->getDb()->prepare($sql);
         $parametros = $this->getParametros($persona);
-        return $sentencia->execute($parametros);
+        $retorno = $sentencia->execute($parametros);
+        if ($retorno == false) {
+            self::lanzarErrorBD($this->getDb()->errorInfo());
+        }
+        return $retorno;
     }
 
-    private function getParametros(Persona $persona) {
+     public function eliminarSeguimiento(Seguimiento $persona) {
+        $sql = "DELETE FROM seguimiento WHERE cod_seg = :cod_seg";
+        return $this->ejecutarDelete($sql, $persona);
+    }
+    
+    private function ejecutarDelete($sql, Seguimiento $persona){
+        $sentencia = $this->getDb()->prepare($sql);
+        $parametros = array(':cod_seg' => $persona->getCodSeg());
+        $retorno = $sentencia->execute($parametros);
+        if ($retorno == false) {
+            self::lanzarErrorBD($this->getDb()->errorInfo());
+        }
+        return $retorno;
+        
+    }
+          
+
+    private function getParametros(Seguimiento $persona) {
         $parametros = array(
-            ':documento' => $persona->getDocumento(),
-            ':nombres' => $persona->getNombre(),
-            ':apellidos' => $persona->getApellidos(),
-            ':telefono1' => $persona->getTelefono1(),
-            ':telefono2' => $persona->getTelefono2(),
-            ':email' => $persona->getEmail(),
-            ':direccion' => $persona->getDireccion()
+            ':cod_seg' => $persona->getId_pers(),
+            ':proyecto_cod_proy' => $persona->getNombre(),
+            ':fecha_inicial' => $persona->getApellido(),
+            ':fecha_final' => $persona->getTelefono(),
+            ':fecha_limite' => $persona->getDireccion(),
+            ':observaciones' => $persona->getEmail(),
+            ':etapa' => date('Y-m-d G:i:s'),
+            ':estado' => $persona->getPersona()
+          
+                
         );
         return $parametros;
-    }*/
+        
+        }
+       public static function lanzarErrorBD($arrayError){
+        throw new Exception("Error de operacion en BD: ".$arrayError[1]);
+       }
 }
 
 ?>

@@ -32,7 +32,7 @@ class Proyecto {
      
     
      public function getCodProy() {
-         return $this->cod_proy;
+         return $this->codProy;
      }
 
      
