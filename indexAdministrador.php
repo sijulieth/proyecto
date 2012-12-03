@@ -13,6 +13,39 @@ require_once 'dao/AdministradorDAO.php';
                 frm.submit();
             }
         </script>
+    <style type="text/css">
+    .administradorcolor {
+	color: #360;
+}
+    .administradornegrita {
+	font-weight: bold;
+}
+    .administradorcursiva {
+	font-style: italic;
+}
+    .administradorcolor {
+	color: #360;
+}
+    .administradornegrita {
+	font-style: italic;
+	font-weight: bold;
+	color: #360;
+}
+    .administradorcursiva {
+	font-style: italic;
+	font-weight: bold;
+	color: #360;
+}
+    .administadorcursiva {
+	font-weight: bold;
+	font-style: italic;
+	color: #360;
+}
+    .administradornegrita {
+	font-weight: bold;
+	font-style: italic;
+}
+    </style>
     </head>
     <body>
 <?php
@@ -21,13 +54,13 @@ $administradores = $pdao->leerTodos();
 ?>
         <form name="form1" method="post" action="">
             <table width="300" border="1" cellspacing="1" cellpadding="1">
-                <caption>
-                    ADMINISTRADORES
+                <caption class="administradorcursiva">
+                    <span class="administradornegrita">ADMINISTRADORES </span>
                 </caption>
                 <tr>
-                    <th width="34" align="center" scope="col">&nbsp;</th>
-                    <th >Codigo</th>
-                    <th >Identificacion</th>
+                  <th width="34" align="center" scope="col">&nbsp;</th>
+                    <th class="administradorcursiva" >Codigo</th>
+                    <th class="administadorcursiva" >Identificacion</th>
                    
                     
                </tr>
@@ -44,7 +77,7 @@ if (!empty($administradores)) {
                         </tr>
                     <?php } } else { ?>
                     <tr>
-                        <td colspan="3" align="center">No existen proyectos en este momento.</td>
+                        <td colspan="3" align="center" class="administradornegrita">No existen proyectos en este momento.</td>
                     </tr>
                 <?php } ?>
             </table>

@@ -18,6 +18,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Nueva Persona</title>
+<style type="text/css">
+#form2 p {
+	color: #903;
+	font-style: italic;
+	font-weight: bold;
+}
+#form2 table tr td label {
+	color: #903;
+	font-weight: bold;
+	font-style: italic;
+}
+</style>
 </head>
 <body>
     <form id="form2" name="form1" method="post" action="ctlDirector.php">

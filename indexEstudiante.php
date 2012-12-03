@@ -44,6 +44,32 @@ require_once 'dao/EstudianteDAO.php';
             }
     
         </script>
+    <style type="text/css">
+    .estudiantenegrita {
+	font-weight: bold;
+}
+    .estudiantecursiva {
+	font-style: italic;
+	color: #360;
+}
+    estudiantecolor {
+	color: #360;
+}
+    .color {
+	color: #360;
+	font-weight: bold;
+	font-style: italic;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    </style>
     </head>
     <body>
 <?php
@@ -52,14 +78,14 @@ $estudiantes = $pdao->leerTodos();
 ?>
         <form name="form1" method="post" action="">
             <table width="300" border="1" cellspacing="1" cellpadding="1">
-                <caption>
-                    ESTUDIANTES
+                <caption class="estudiantenegrita">
+                    <span class="estudiantecursiva">ESTUDIANTES </span>
                 </caption>
                 <tr>
-                    <th width="34" align="center" scope="col">&nbsp;</th>
-                    <th >Codigo</th>
-                    <th >Identificacion</th>
-                    <th >Codigo Proyecto</th>
+                  <th width="34" align="center" scope="col">&nbsp;</th>
+                    <th class="color" >Codigo</th>
+                    <th class="color" >Identificacion</th>
+                    <th class="color" >Codigo Proyecto</th>
                    
                     
                </tr>
@@ -77,7 +103,7 @@ if (!empty($estudiantes)) {
                         </tr>
                     <?php } } else { ?>
                     <tr>
-                        <td colspan="4" align="center">No existen proyectos en este momento.</td>
+                        <td colspan="4" align="center" class="color">No existen proyectos en este momento.</td>
                     </tr>
                 <?php } ?>
             </table>

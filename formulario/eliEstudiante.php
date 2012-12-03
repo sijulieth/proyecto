@@ -22,11 +22,13 @@
 #form1 table {
 	font-weight: bold;
 	font-style: italic;
+	color: #606;
 }
 #form1 p {
 	font-weight: bold;
 	font-size: 24px;
 	font-style: italic;
+	color: #606;
 }
 </style>
 </head>

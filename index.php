@@ -36,15 +36,27 @@ if($mensaje !=''){
  
 <?php } ?>
 </script>
+<style type="text/css">
+.color {
+	color: #360;
+	font-weight: bold;
+	font-style: italic;
+}
+#color {
+	color: #360;
+	font-weight: bold;
+	font-style: italic;
+}
+</style>
 </head>
 <body>
 <form id="form1" name="form1" method="post" action="index.php">
   
-  Usuario: 
+  <span class="color">Usuario:</span>
   <input type="text" name="usuario" id="usuario" />
   <br />
   <br />
-  Clave: &nbsp;&nbsp;
+  <span id="color">Clave: &nbsp;</span>&nbsp;
 <input type="password" name="clave" id="clave" />
 <br />
 <br />

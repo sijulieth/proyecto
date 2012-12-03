@@ -9,6 +9,6 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-       PA FUERA! PA LA CALLE!
+       Ha salido de la aplicaci&oacute;n. Para volver a entrar haga clic <a href="index.php">aqu&iacute;</a>
     </body>
 </html>

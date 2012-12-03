@@ -44,6 +44,31 @@ require_once 'dao/ProyectoDAO.php';
                 return false;
             }
         </script>
+    <style type="text/css">
+    .color {
+	color: #360;
+}
+    .negrita {
+	font-weight: bold;
+}
+    .color .negrita {
+	font-style: italic;
+}
+    .color {
+	color: #360;
+	font-weight: bold;
+	font-style: italic;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    </style>
     </head>
     <body>
         <?php
@@ -52,14 +77,14 @@ require_once 'dao/ProyectoDAO.php';
         ?>
         <form name="form1" method="post" action="">
             <table width="757" border="1" cellspacing="1" cellpadding="1">
-                <caption>
-                    PROYECTOS
+                <caption class="color">
+                    <span class="negrita">PROYECTOS </span>
                 </caption>
                 <tr>
-                    <th width="34" align="center" scope="col">&nbsp;</th>
-                    <th >Codigo</th>
-                    <th >Tema</th>
-                    <th >Linea de Investigacion</th>
+                  <th width="34" align="center" scope="col">&nbsp;</th>
+                    <th class="color" >Codigo</th>
+                    <th class="color" >Tema</th>
+                    <th class="color" >Linea de Investigacion</th>
 
                 </tr>
                 <?php
@@ -77,7 +102,7 @@ require_once 'dao/ProyectoDAO.php';
                     <?php }
                 } else { ?>
                     <tr>
-                        <td colspan="4" align="center">No existen proyectos en este momento.</td>
+                        <td colspan="4" align="center" class="color">No existen proyectos en este momento.</td>
                     </tr>
 <?php } ?>
             </table>

@@ -28,6 +28,25 @@ $persona = $personaDAO->leerPorDocumento($documento);
                 font-size: 24px;
                 font-style: italic;
             }
+        color {
+	color: #903;
+}
+        negrita {
+	font-weight: bold;
+}
+        cursiva {
+	font-style: italic;
+}
+        #form3 p {
+	color: #903;
+	font-weight: bold;
+	font-style: italic;
+}
+        #form3 table tr td label {
+	color: #903;
+	font-weight: bold;
+	font-style: italic;
+}
         </style>
     </head>
 
@@ -39,11 +58,12 @@ $persona = $personaDAO->leerPorDocumento($documento);
            <table width="471" border="0">
                 <tr>
                     <td ><label>Codigo Proyecto</label></td>
-                    <td><input type="text" name="proyecto[cod_proy]" id="codProyecto"  size="25" maxlength="25" readonly="yes" value="<?php echo $persona->getCodProy(); ?>" /></td>
+                    <td><input type="text" name="proyecto[cod_proy]" id="codProyecto"  size="38" maxlength="25" readonly="yes" value="<?php echo $persona->getCodProy(); ?>" /></td>
                 </tr>
                 <tr>
-                    <td><label for="tema">Tema</label></td>
-                    <td><input type="text" name="proyecto[tema]" id="tema"  size="30"  maxlength="500" value="<?php echo $persona->getTema(); ?>" /></td>
+                    <td height="65"><label>Tema</label></td>
+                    <td><textarea name="proyecto[tema]" cols="35" rows="4" id="tema"><?php echo $persona->getTema(); ?></textarea></td>
+                    
                 </tr>
                 <tr>
                     <td><label>Linea de Investigacion</label></td>

@@ -43,6 +43,46 @@ require_once 'dao/SeguimientoDAO.php';
                 return false;
             }            
         </script>
+    <style type="text/css">
+    .color {
+	color: #360;
+}
+    .negrita {
+	font-weight: bold;
+}
+    .color .negrita {
+	font-style: italic;
+}
+    .color {
+	color: #360;
+	font-weight: bold;
+	font-style: italic;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    </style>
     </head>
     <body>
         <?php
@@ -51,19 +91,19 @@ require_once 'dao/SeguimientoDAO.php';
         ?>
         <form name="form1" method="post" action="">
             <table width="400" border="1" cellspacing="1" cellpadding="1">
-                <caption>
-                    SEGUIMIENTO
+                <caption class="color">
+                    <span class="negrita">SEGUIMIENTO </span>
                 </caption>
                 <tr>
-                    <th width="757" align="center" scope="col">&nbsp;</th>
-                    <th >Codigo</th>
-                    <th >Codigo Proyecto</th>
-                    <th >Fecha Inicial</th>
-                    <th >Fecha Final</th>
-                    <th >Fecha Limite</th>
-                    <th >Observaciones</th>   
-                    <th >Etapa</th>
-                    <th >Estado</th>
+                  <th width="757" align="center" scope="col">&nbsp;</th>
+                    <th class="color" >Codigo</th>
+                    <th class="color" >Codigo Proyecto</th>
+                    <th class="color" >Fecha Inicial</th>
+                    <th class="color" >Fecha Final</th>
+                    <th class="color" >Fecha Limite</th>
+                    <th class="color" >Observaciones</th>   
+                    <th class="color" >Etapa</th>
+                    <th class="color" >Estado</th>
 
 
                 </tr>
@@ -87,14 +127,14 @@ require_once 'dao/SeguimientoDAO.php';
                     <?php }
                 } else { ?>
                     <tr>
-                        <td colspan="9" align="center">No existen proyectos en este momento.</td>
+                        <td colspan="9" align="center" class="color">No existen proyectos en este momento.</td>
                     </tr>
 <?php } ?>
             </table>
             <p>
                 <input type="button" name="button" id="button" value="Agregar" onclick="agregar(this)">
-                <input type="button" name="button2" id="button2" value="Modificar" onclick="Modificar(this)">
-                <input type="button" name="button3" id="button3" value="Eliminar" onclick="Eliminar(this)">
+                <input type="button" name="button2" id="button2" value="Modificar" onclick="modificar(this)">
+                <input type="button" name="button3" id="button3" value="Eliminar" onclick="eliminar(this)">
             </p>
         </form>
     </body>

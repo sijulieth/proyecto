@@ -7,6 +7,8 @@ require_once 'dao/PersonaDAO.php';
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>PERSONAS</title>
         <script type="text/javascript">
+        
+        
             
             function agregar(obj){
                 var frm = obj.form;
@@ -45,29 +47,80 @@ require_once 'dao/PersonaDAO.php';
                 return false;
             }
         </script>
+    <style type="text/css">
+    .color {
+	color: #360;
+}
+    .negrita {
+	font-weight: bold;
+}
+    cursiva {
+	font-style: italic;
+}
+    .color .negrita {
+	font-style: italic;
+}
+    .color {
+	color: #360;
+	font-weight: bold;
+	font-style: italic;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    .color {
+	color: #360;
+}
+    </style>
     </head>
     <body>
+        
+    
 <?php
 $pdao = new PersonaDAO();
 $personas = $pdao->leerTodos();
 ?>
         <form name="form1" method="post" action="">
             <table width="757" border="1" cellspacing="1" cellpadding="1">
-                <caption>
-                    PERSONAS
+                <caption class="color">
+                    <span class="negrita">PERSONAS </span>
                 </caption>
                 <tr>
-                    <th width="34" align="center" scope="col">&nbsp;</th>
-                    <th >Identificacion</th>
-                    <th >Nombre</th>
-                    <th >Apellido</th>
-                    <th >Telefono</th>
-                    <th >Dirección</th>
-                    <th >Email</th>
-                    <th >Fecha</th>
-                    <th >Persona</th>
-                    <th >Usuario</th>
-                    <th >Contraseña</th>
+                  <th width="34" align="center" scope="col">&nbsp;</th>
+                    <th class="color" >Identificacion</th>
+                    <th class="color" >Nombre</th>
+                    <th class="color" >Apellido</th>
+                    <th class="color" >Telefono</th>
+                    <th class="color" >Dirección</th>
+                    <th class="color" >Email</th>
+                    <th class="color" >Fecha</th>
+                    <th class="color" >Persona</th>
+                    <th class="color" >Usuario</th>
+                    <th class="color" >Contraseña</th>
                </tr>
 <?php
 if (!empty($personas)) {
@@ -90,7 +143,7 @@ if (!empty($personas)) {
                         </tr>
                     <?php } } else { ?>
                     <tr>
-                        <td colspan="11" align="center">No existen personas en este momento.</td>
+                        <td colspan="11" align="center" class="color">No existen personas en este momento.</td>
                     </tr>
                 <?php } ?>
             </table>

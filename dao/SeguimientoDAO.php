@@ -53,7 +53,7 @@ class SeguimientoDAO {
     
     public function insertarSeguimiento(Seguimiento $persona) {
         $sql = "INSERT INTO `seguimiento` (`cod_seg`, `proyecto_cod_proy`, `fecha_inicial`, `fecha_final`, `fecha_limite`, `observaciones`, `etapa`, `estado`) VALUES ";
-        $sql.=" (:cod_seg, :proyecto_cod_proy, :fecha_inicial, :fecha_final, :fecha_limite, :observaciones, :etapa, :estado, :contrasena) ";
+        $sql.=" (:cod_seg, :proyecto_cod_proy, :fecha_inicial, :fecha_final, :fecha_limite, :observaciones, :etapa, :estado) ";
         $resul = false;
         try {
             $resul = $this->ejecutarInserUpdate($sql, $persona);
@@ -65,7 +65,7 @@ class SeguimientoDAO {
         }
 
     public function actualizarSeguimiento(Seguimiento $persona) {
-        $sql = "UPDATE persona SET `cod_seg`=:cod_seg, `proyecto_cod_proy`=:proyecto_cod_proy, `fecha_inicial`=:fecha_inicial, `fecha_final`=:fecha_final, `fecha_limite`=:fecha_limite, `observaciones`=:observaciones, `etapa`=:etapa, `estado`=:estado";
+        $sql = "UPDATE Seguimiento SET `cod_seg`=:cod_seg, `proyecto_cod_proy`=:proyecto_cod_proy, `fecha_inicial`=:fecha_inicial, `fecha_final`=:fecha_final, `fecha_limite`=:fecha_limite, `observaciones`=:observaciones, `etapa`=:etapa, `estado`=:estado";
         $sql.=" WHERE cod_seg = :cod_seg ";
         return $this->ejecutarInserUpdate($sql, $persona);
     }
@@ -99,14 +99,14 @@ class SeguimientoDAO {
 
     private function getParametros(Seguimiento $persona) {
         $parametros = array(
-            ':cod_seg' => $persona->getId_pers(),
-            ':proyecto_cod_proy' => $persona->getNombre(),
-            ':fecha_inicial' => $persona->getApellido(),
-            ':fecha_final' => $persona->getTelefono(),
-            ':fecha_limite' => $persona->getDireccion(),
-            ':observaciones' => $persona->getEmail(),
-            ':etapa' => date('Y-m-d G:i:s'),
-            ':estado' => $persona->getPersona()
+            ':cod_seg' => $persona->getCodSeg(),
+            ':proyecto_cod_proy' => $persona->getProyectoCodProy(),
+            ':fecha_inicial' => date('Y-m-d G:i:s'),
+            ':fecha_final' => date('Y-m-d G:i:s'),
+            ':fecha_limite' => date('Y-m-d G:i:s'),
+            ':observaciones' => $persona->getObservaciones(),
+            ':etapa' => $persona->getEtapa(),
+            ':estado' => $persona->getEstado()
           
                 
         );

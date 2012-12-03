@@ -45,6 +45,30 @@ require_once 'dao/DirectorDAO.php';
                 return false;
             }
         </script>
+    <style type="text/css">
+    .director {
+	font-style: italic;
+}
+    .directorcolor {
+	color: #360;
+}
+    .directorcolor {
+	color: #360;
+}
+    .directorcolor {
+	color: #360;
+	font-weight: bold;
+}
+    .directorcursiva {
+	font-style: italic;
+	color: #360;
+}
+    .direcctorcursiva {
+	font-style: italic;
+	color: #360;
+	font-weight: bold;
+}
+    </style>
     </head>
     <body>
 <?php
@@ -53,14 +77,14 @@ $directores = $pdao->leerTodos();
 ?>
         <form name="form1" method="post" action="">
             <table width="300" border="1" cellspacing="1" cellpadding="1">
-                <caption>
-                    DIRECTORES
+                <caption class="director">
+                    <span class="directorcolor">DIRECTORES </span>
                 </caption>
                 <tr>
                     <th width="34" align="center" scope="col">&nbsp;</th>
-                    <th >Codigo</th>
-                    <th >Identificacion</th>
-                    <th >Codigo Proyecto</th>
+                    <th bgcolor="#FFFFFF" class="directorcursiva" >Codigo</th>
+                    <th bgcolor="#FFFFFF" class="directorcursiva" >Identificacion</th>
+                    <th bgcolor="#FFFFFF" class="directorcursiva" >Codigo Proyecto</th>
                    
                     
                </tr>
@@ -78,7 +102,7 @@ if (!empty($directores)) {
                         </tr>
                     <?php } } else { ?>
                     <tr>
-                        <td colspan="4" align="center">No existen proyectos en este momento.</td>
+                        <td colspan="4" align="center" class="direcctorcursiva">No existen proyectos en este momento.</td>
                     </tr>
                 <?php } ?>
             </table>

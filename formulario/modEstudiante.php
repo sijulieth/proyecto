@@ -28,6 +28,16 @@
 	font-size: 24px;
 	font-style: italic;
 }
+#form3 p {
+	color: #903;
+	font-weight: bold;
+	font-style: italic;
+}
+#form3 table tr td label {
+	font-weight: bold;
+	font-style: italic;
+	color: #903;
+}
 </style>
 </head>
 

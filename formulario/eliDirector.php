@@ -28,14 +28,28 @@
 	font-size: 24px;
 	font-style: italic;
 }
+#form2 {
+	color: #606;
+	font-style: italic;
+}
+#form2 #form2 {
+	font-weight: bold;
+	font-style: italic;
+}
+#form2 p {
+	font-weight: bold;
+	font-style: italic;
+}
 </style>
 </head>
 
 <body>
 <form id="form2" name="form1" method="post" action="ctlDirector.php">
+        <span id="form2">
         <input name="eliminar" type="hidden" value="1"/>
     
- <p>ELIMINAR DIRECTOR</p>
+        </span>
+  <p>ELIMINAR DIRECTOR</p>
  <table width="417" border="0">
     <tr>
       <td><label>Codigo Director</label></td>
