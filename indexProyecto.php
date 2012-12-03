@@ -4,6 +4,7 @@ require_once 'dao/ProyectoDAO.php';
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="shortcut icon" href="imagenes/upc.ico" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>PROYECTOS</title>
         <script type="text/javascript">
@@ -44,31 +45,31 @@ require_once 'dao/ProyectoDAO.php';
                 return false;
             }
         </script>
-    <style type="text/css">
-    .color {
-	color: #360;
-}
-    .negrita {
-	font-weight: bold;
-}
-    .color .negrita {
-	font-style: italic;
-}
-    .color {
-	color: #360;
-	font-weight: bold;
-	font-style: italic;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    </style>
+        <style type="text/css">
+            .color {
+                color: #360;
+            }
+            .negrita {
+                font-weight: bold;
+            }
+            .color .negrita {
+                font-style: italic;
+            }
+            .color {
+                color: #360;
+                font-weight: bold;
+                font-style: italic;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+        </style>
     </head>
     <body>
         <?php
@@ -81,7 +82,7 @@ require_once 'dao/ProyectoDAO.php';
                     <span class="negrita">PROYECTOS </span>
                 </caption>
                 <tr>
-                  <th width="34" align="center" scope="col">&nbsp;</th>
+                    <th width="34" align="center" scope="col">&nbsp;</th>
                     <th class="color" >Codigo</th>
                     <th class="color" >Tema</th>
                     <th class="color" >Linea de Investigacion</th>
@@ -100,7 +101,8 @@ require_once 'dao/ProyectoDAO.php';
 
                         </tr>
                     <?php }
-                } else { ?>
+                } else {
+                    ?>
                     <tr>
                         <td colspan="4" align="center" class="color">No existen proyectos en este momento.</td>
                     </tr>

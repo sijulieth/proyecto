@@ -10,13 +10,18 @@ if (array_key_exists("usuario", $_POST)) {
     $usuario->setUsuario($usuarioP);
     $userDAO = new PersonaDAO();
     $usuario = $userDAO->leerPorUsuario($usuarioP);
+    
+
+    
     if($usuario == null){
         $mensaje="Usuario/Clave no encontrados";
+    
     }else{
         $_SESSION['usuario'] = $usuario->getUsuario();
-        $_SESSION['nombre'] = $usuario->getNombre();
+        $_SESSION['contrasena'] = $usuario->getContrasena();
         header('Location: home.php');
         die();
-    }
+   
+}
 }
 ?>

@@ -15,25 +15,26 @@ $persona = $personaDAO->leerPorDocumento($documento);
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+    <head>
+        <link rel="shortcut icon" href="imagenes/upc.ico" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Proyecto</title>
-    <style type="text/css">
+        <title>Proyecto</title>
+        <style type="text/css">
             #form1 table {
                 font-weight: bold;
                 font-style: italic;
             }
             #form1 p {
-	font-weight: bold;
-	font-size: 24px;
-	font-style: italic;
-	color: #606;
+                font-weight: bold;
+                font-size: 24px;
+                font-style: italic;
+                color: #606;
             }
-        #form1 table tr td label {
-	color: #606;
-}
-    </style>
-</head>
+            #form1 table tr td label {
+                color: #606;
+            }
+        </style>
+    </head>
 
     <body>
         <form id="form1" name="form1" method="post" action="ctlProyecto.php">
@@ -48,7 +49,7 @@ $persona = $personaDAO->leerPorDocumento($documento);
                 <tr>
                     <td height="65"><label>Tema</label></td>
                     <td><textarea name="proyecto[tema]" cols="35" rows="4" id="tema"><?php echo $persona->getTema(); ?></textarea></td>
-                    </tr>
+                </tr>
                 <tr>
                     <td height="61"><label for="linInvestigacion">Linea de Investigacion</label></td>
                     <td width="294"><input type="text" name="proyecto[lin_inves]" id="linInvestigacion"  size="25" maxlength="25" readonly="yes" value="<?php echo $persona->getLinInves(); ?>" /></td>

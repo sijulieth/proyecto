@@ -4,6 +4,7 @@ require_once 'dao/DirectorDAO.php';
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="shortcut icon" href="imagenes/upc.ico" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>DIRECTORES</title>
         <script type="text/javascript">

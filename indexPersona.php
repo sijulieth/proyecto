@@ -4,6 +4,7 @@ require_once 'dao/PersonaDAO.php';
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="shortcut icon" href="imagenes/upc.ico" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>PERSONAS</title>
         <script type="text/javascript">
@@ -47,70 +48,70 @@ require_once 'dao/PersonaDAO.php';
                 return false;
             }
         </script>
-    <style type="text/css">
-    .color {
-	color: #360;
-}
-    .negrita {
-	font-weight: bold;
-}
-    cursiva {
-	font-style: italic;
-}
-    .color .negrita {
-	font-style: italic;
-}
-    .color {
-	color: #360;
-	font-weight: bold;
-	font-style: italic;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    .color {
-	color: #360;
-}
-    </style>
+        <style type="text/css">
+            .color {
+                color: #360;
+            }
+            .negrita {
+                font-weight: bold;
+            }
+            cursiva {
+                font-style: italic;
+            }
+            .color .negrita {
+                font-style: italic;
+            }
+            .color {
+                color: #360;
+                font-weight: bold;
+                font-style: italic;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+            .color {
+                color: #360;
+            }
+        </style>
     </head>
     <body>
-        
-    
-<?php
-$pdao = new PersonaDAO();
-$personas = $pdao->leerTodos();
-?>
+
+
+        <?php
+        $pdao = new PersonaDAO();
+        $personas = $pdao->leerTodos();
+        ?>
         <form name="form1" method="post" action="">
             <table width="757" border="1" cellspacing="1" cellpadding="1">
                 <caption class="color">
                     <span class="negrita">PERSONAS </span>
                 </caption>
                 <tr>
-                  <th width="34" align="center" scope="col">&nbsp;</th>
+                    <th width="34" align="center" scope="col">&nbsp;</th>
                     <th class="color" >Identificacion</th>
                     <th class="color" >Nombre</th>
                     <th class="color" >Apellido</th>
@@ -121,15 +122,15 @@ $personas = $pdao->leerTodos();
                     <th class="color" >Persona</th>
                     <th class="color" >Usuario</th>
                     <th class="color" >Contraseña</th>
-               </tr>
-<?php
-if (!empty($personas)) {
-    foreach ($personas as $persona) {
-?>
+                </tr>
+                <?php
+                if (!empty($personas)) {
+                    foreach ($personas as $persona) {
+                        ?>
                         <tr>
-                            
+
                             <td width="34" align="center"><input type="radio" name="id_pers" id="radio" value="<?php echo $persona['id_pers']; ?>"></td>
-                            
+
                             <td width="139" scope="col"><?php echo $persona['id_pers']; ?></td>
                             <td width="135" scope="col"><?php echo $persona['nombre']; ?></td>
                             <td width="137" scope="col"><?php echo $persona['apellido']; ?></td>
@@ -141,11 +142,12 @@ if (!empty($personas)) {
                             <td width="148" scope="col"><?php echo $persona['usuario']; ?></td>
                             <td width="148" scope="col"><?php echo $persona['contrasena']; ?></td>
                         </tr>
-                    <?php } } else { ?>
+                    <?php }
+                } else { ?>
                     <tr>
                         <td colspan="11" align="center" class="color">No existen personas en este momento.</td>
                     </tr>
-                <?php } ?>
+<?php } ?>
             </table>
             <p>
                 <input type="button" name="button" id="button" value="Agregar" onclick="agregar(this)">

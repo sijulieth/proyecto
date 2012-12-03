@@ -1,52 +1,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
-<style type="text/css">
-#form1 table {
-	font-weight: bold;
-	font-style: italic;
-	font-size: medium;
-	color: #006;
-}
-#form1 p {
-	font-weight: bold;
-	font-style: italic;
-	font-size: 24px;
-	text-align: left;
-	color: #006;
-}
-</style>
-</head>
+    <head>
+        <link rel="shortcut icon" href="imagenes/upc.ico" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Documento sin título</title>
+        <style type="text/css">
+            #form1 table {
+                font-weight: bold;
+                font-style: italic;
+                font-size: medium;
+                color: #006;
+            }
+            #form1 p {
+                font-weight: bold;
+                font-style: italic;
+                font-size: 24px;
+                text-align: left;
+                color: #006;
+            }
+        </style>
+    </head>
 
-<body>
-<form id="form1" name="form1" method="post" action="ctlEstudiante.php">
+    <body>
+        <form id="form1" name="form1" method="post" action="ctlEstudiante.php">
             <input name="agregar" type="hidden" value="1"/>
 
-  <p>NUEVO ESTUDIANTE</p>
-  <table width="438" border="0">
-    <tr>
-      <td width="127"><label for="codEstudiante">Codigo</label></td>
-      <td width="276"><input type="text" name="estudiante[cod_est]" id="codEstudiante" /></td>
-    </tr>
-    <tr>
-      <td><label for="idEstudiante">Identificacion</label></td>
-      <td><input type="text" name="estudiante[persona_id_pers]" id="idEstudiante" /></td>
-    </tr>
-    <tr>
-      <td><label for="codProyecto">Codigo Proyecto</label></td>
-      <td><input type="text" name="estudiante[proyecto_cod_proy]" id="codProyecto" /></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
-      </td></tr>
-  </table>
-</form>
-</body>
+            <p>NUEVO ESTUDIANTE</p>
+            <table width="438" border="0">
+                <tr>
+                    <td width="127"><label for="codEstudiante">Codigo</label></td>
+                    <td width="276"><input type="text" name="estudiante[cod_est]" id="codEstudiante" /></td>
+                </tr>
+                <tr>
+                    <td><label for="idEstudiante">Identificacion</label></td>
+                    <td><input type="text" name="estudiante[persona_id_pers]" id="idEstudiante" /></td>
+                </tr>
+                <tr>
+                    <td><label for="codProyecto">Codigo Proyecto</label></td>
+                    <td><input type="text" name="estudiante[proyecto_cod_proy]" id="codProyecto" /></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" name="guardar" id="guardar" value="Guardar" />
+                    </td></tr>
+            </table>
+        </form>
+    </body>
 </html>
